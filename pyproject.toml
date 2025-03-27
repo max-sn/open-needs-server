@@ -1,0 +1,50 @@
+[project]
+name = "open-needs-server"
+version = "0.1.0"
+description = "Open-Needs Server is a REST based Database to create, manage, link and automate life cycle objects."
+authors = [
+    {name = "Daniel Woste",email = "daniel.woste@useblocks.com"}
+]
+license = {file = "LICENSE"}
+readme = "README.md"
+requires-python = ">=3.11,<4.0.0"
+dependencies = [
+    "fastapi[standard] (>=0.115.12,<0.116.0)",
+    "fastapi-users[sqlalchemy] (>=14.0.1,<15.0.0)",
+    "aiosqlite (>=0.21.0,<0.22.0)",
+    "dynaconf (>=3.2.10,<4.0.0)",
+    "sqladmin (>=0.20.1,<0.21.0)",
+    "jsonschema (>=4.23.0,<5.0.0)"
+]
+
+[project.urls]
+homepage="https://www.open-needs.org"
+repository="https://github.com/open-needs/open-needs-server"
+documentation="https://open-needs.org/open-needs-server/"
+
+[project.scripts]
+ons = "open_needs_server.main:start"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.docs]
+optional = true
+
+[tool.poetry.group.docs.dependencies]
+sphinx = "^8.2.3"
+sphinx-immaterial = "^0.13.4"
+autodoc-pydantic = "^2.2.0"
+
+[tool.poetry.group.style]
+optional = true
+
+[tool.poetry.group.style.dependencies]
+ruff = "^0.11.2"
+
+[tool.poetry.group.typing]
+optional = true
+
+[tool.poetry.group.typing.dependencies]
+mypy = "^1.15.0"

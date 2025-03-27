@@ -46,4 +46,4 @@ class NeedReturnSchema(NeedBaseSchema):
     references: Dict[str, list[str]]
 
     class Config:
-        orm_mode = True
+        from_attributes = True

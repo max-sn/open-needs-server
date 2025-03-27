@@ -14,7 +14,7 @@ class OrganizationShortSchema(OrganizationBaseSchema):
     id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class OrganizationReturnSchema(OrganizationShortSchema):
@@ -22,4 +22,4 @@ class OrganizationReturnSchema(OrganizationShortSchema):
     # projects: list[ProjectSchema] = []
 
     class Config:
-        orm_mode = True
+        from_attributes = True

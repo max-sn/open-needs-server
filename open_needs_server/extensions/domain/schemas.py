@@ -20,11 +20,11 @@ class DomainSchema(DomainBaseSchema):
     id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class DomainReturnSchema(DomainBaseSchema):
     id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
