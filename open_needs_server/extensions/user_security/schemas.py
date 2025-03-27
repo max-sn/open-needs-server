@@ -23,14 +23,14 @@ class RoleReturnSchema(RoleBaseSchema):
     ] = None  # Throws error during login: greenlet_spawn has not been called; can't call await_() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/14/xd2s)
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class UserReturnSchema(schemas.BaseUser[uuid.UUID]):
     # roles: Optional[List[RoleReturnSchema]] | None = []
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 # CREATE

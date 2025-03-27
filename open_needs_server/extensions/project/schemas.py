@@ -24,4 +24,4 @@ class ProjectSchema(ProjectBaseSchema):
     domains: list[DomainReturnSchema | None] = []
 
     class Config:
-        orm_mode = True
+        from_attributes = True
